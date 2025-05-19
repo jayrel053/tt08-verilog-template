@@ -24,12 +24,12 @@ module tt_um_full_adder (
   // assign uo_out  = !ui_in;  // Example: ou_out is the logical inverse of ui_in
   // assign carry_in = 0;
   // assign carry_out = 0;
-  assign ui_in = 0;
-  assign uio_in = 0;
+  // assign ui_in = 0;
+  // assign uio_in = 0;
   assign uo_out = 0;
   assign uio_out = 0;
   assign uio_oe  = 0;
-	assign uo_out = ui_in + uio_in;
+  assign uo_out = ui_in + uio_in;
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, 1'b0};
