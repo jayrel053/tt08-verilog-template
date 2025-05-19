@@ -13,15 +13,15 @@ module tt_um_example (
     output wire [7:0] uio_oe,   // IOs: Enable path (active high: 0=input, 1=output)
     input  wire       ena,      // always 1 when the design is powered, so you can ignore it
     input  wire       clk,      // clock
-    input  wire       rst_n,     // reset_n - low to reset
-    reg [3:0] count_out
+    input  wire       rst_n     // reset_n - low to reset
+    // reg [3:0] count_out
 );
   
   always @ (posedge clk)
     if (~rst_n)
-      uo_out <= 0;
+      assign uo_out <= 0;
     else
-      uo_out <= uo_out+1;
+      assign uo_out <= uo_out+1;
 
   // All output pins must be assigned. If not used, assign to 0.
   //  assign uo_out = 0;
