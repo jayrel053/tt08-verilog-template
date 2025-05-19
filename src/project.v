@@ -15,23 +15,15 @@ module tt_um_example (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-    reg [3:0] count_out;
+    // reg [3:0] count_out;
   
   always @ (posedge clk)
     if (~rst_n)
-      count_out <= 0;
+      uo_out <= 0;
     else
-      count_out <= count_out+1;
+      uo_out <= uo_out+1;
 
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out[0]=count_out[0];
-  assign uo_out[1]=count_out[1];
-  assign uo_out[2]=count_out[2];
-  assign uo_out[3]=count_out[3];
-  assign uo_out[4] = 0
-  assign uo_out[5] = 0
-  assign uo_out[6] = 0
-  assign uo_out[7] = 0
   assign uio_out = 0;
   assign uio_oe  = 0;
 
