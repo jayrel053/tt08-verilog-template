@@ -14,7 +14,7 @@ module tt_um_example (
     input  wire       ena,      // always 1 when the design is powered, so you can ignore it
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
-    reg [3:0] count_out;
+    reg [3:0] count_out
 );
   
   always @ (posedge clk)
