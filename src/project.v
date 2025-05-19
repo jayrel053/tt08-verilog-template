@@ -19,12 +19,12 @@ module tt_um_example (
   
   always @ (posedge clk)
     if (~rst_n)
-      count_out <= 0;
+      uo_out <= 0;
     else
-      count_out <= count_out+1;
+      uo_out <= uo_out+1;
 
   // All output pins must be assigned. If not used, assign to 0.
-    assign uo_out = 0;
+  //  assign uo_out = 0;
     assign uio_out = 0;
     assign uio_oe  = 0;
 
