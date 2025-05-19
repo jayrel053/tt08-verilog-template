@@ -6,8 +6,8 @@
 `default_nettype none
 
 module tt_um_full_adder (
-    input  wire carry_in, 
-    output wire carry_out,
+   // input  wire carry_in, 
+   // output wire carry_out,
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
