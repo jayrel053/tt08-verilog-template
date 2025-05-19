@@ -6,8 +6,8 @@
 `default_nettype none
 
 module tt_um_full_adder (
-    input  wire a, b, carry_in, 
-    output wire c, carry_out,
+    input  wire carry_in, 
+    output wire carry_out,
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -27,8 +27,8 @@ module tt_um_full_adder (
   assign uo_out = 0;
   assign uio_out = 0;
   assign uio_oe  = 0;
-  assign {carry_out, c} = 
-	a + b + carry_in;
+	assign {uo_out} = 
+	ui_in + uio_in + carry_in;
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, 1'b0};
