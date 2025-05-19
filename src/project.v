@@ -22,6 +22,7 @@ module tt_um_full_adder (
   
   // assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
   // assign uo_out  = !ui_in;  // Example: ou_out is the logical inverse of ui_in
+  assign carry_in = 0;
   assign ui_in = 0;
   assign uio_in = 0;
   assign uo_out = 0;
