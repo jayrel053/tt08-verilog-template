@@ -1,17 +1,17 @@
 # Tiny Tapeout project information
 project:
-  title:        "test"      # Project title
-  author:       "jayrel053"      # Your name
-  discord:      "no"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "test"      # One line description of what your project does
+  title:        "test_Skywater"      # Project title
+  author:       "JRL"      # Your name
+  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "this is a test of the Sky-130nm workflow"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     1000000      # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_full_adder"
+  top_module:  "tt_um_example"
 
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
@@ -20,6 +20,7 @@ project:
     - "project.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
+# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
   ui[0]: "in_0"
@@ -42,14 +43,14 @@ pinout:
   uo[7]: "out_7"
 
   # Bidirectional pins
-  uio[0]: "uio_0"
-  uio[1]: "uio_1"
-  uio[2]: "uio_2"
-  uio[3]: "uio_3"
-  uio[4]: "uio_4"
-  uio[5]: "uio_5"
-  uio[6]: "uio_6"
-  uio[7]: "uio_7"
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
 
 # Do not change!
 yaml_version: 6
