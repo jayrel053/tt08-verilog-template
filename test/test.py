@@ -26,15 +26,21 @@ async def test_project(dut):
     dut._log.info("Test project behaviour")
 
     # Set the input values 501331you want to test
-    dut.ui_in.value = 1
-    dut.uio_in.value = 1
+    # dut.ui_in.value = 1
+    # dut.uio_in.value = 1
 
     # Wait for one clock cycle to see the output values
-    await ClockCycles(dut.clk, 1)
+    await ClockCycles(dut.clk, 200)
 
     # The following assersion is just an example of how to check the output values.
     # Change it to match the actual expected output of your module:
-    assert dut.uo_out.value == 2
+    #assert dut.uo_out.value == 2
 
     # Keep testing the module by changing the input values, waiting for
     # one or more clock cycles, and asserting the expected output values.
+    # run for 50ns checking count on each rising edge
+    for cnt in range(50):
+        await RisingEdge(dut.clk)
+        v_count = dut.count.value
+        mod_cnt = cnt % 16
+        assert v_count.integer == mod_cnt, "counter result is incorrect: %s != %s" % (str(dut.count.value), mod_cnt)
