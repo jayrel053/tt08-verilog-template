@@ -17,11 +17,20 @@ module tt_um_example (
 );
 
   // All output pins must be assigned. If not used, assign to 0.
-    always @(posedge clk or posedge rst_n)
-        if (rst_n)
-      assign uo_out <= 0;
-    else
-      assign uo_out <= uo_out + 1;
+    reg [7:0] count;
+    assign uo_out = count;
+    assign uio_out = 8'b0;
+    assign uio_oe = 8'b0;
+
+    always @(posedge clk) begin
+      if (!rst_n) begin
+          count <= 8'b0;
+      end else if (ui_in[1]) begin
+          count <= uio_in;
+      end else if (ui_in[0]) begin
+          count <= count + 1;
+      end
+    end
     
     //assign uo_out = ui_in[0] + uio_in[0];  // Example: ou_out is ui_in OR uio_in
   assign ui_in = 0;
